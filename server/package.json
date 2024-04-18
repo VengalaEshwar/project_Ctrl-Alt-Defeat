@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "This is the backend of the the project ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat.git"
+  },
+  "author": "V.Eshwar,T.Sai Kumar,U.Aravind,G.Vamshi Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat/issues"
+  },
+  "homepage": "https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat#readme"
+}
