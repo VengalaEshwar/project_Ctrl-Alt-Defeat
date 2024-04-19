@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RenalGuardian</title>
+  <!-- Add your custom CSS file -->
+  <link rel="stylesheet" href="./styles.css">
+  <script>
+    const form1 = document.querySelector(".form");
+    form1.addEventListener('submit',event=> {
+      event.preventDefault();
+      const formData = new FormData(form1);
+      const data = Object=fromEntries(formData);
+      fetch("http://localhost:5000/Project/postData", {
+        method : 'POST',
+        headers : {
+          'Content-Type' :'application/json'
+        },
+        body :JSON.stringify(data),
+      }).then(res =>res.json())
+      .then(data=> res.send(data))
+      .catch((err)=>console.log(err));
+    })
+    </script>
+</head>
+<body>
+  <header>
+    <h1>Renal Guardian</h1>
+  </header>
+  <main>
+    <section class="prediction-form">
+      <h2>Prediction Form</h2>
+      <!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <form action="#" method="post">
+        <label>Age:</label>
+        <input type="text" name="name" required><br><br>
+        <label>Blood Pressure</label>
+        <input type="text" name="name" required><br><br>
+        <label>specific gravity</label>
+        <input type="text" name="name" required><br><br>
+        <label>albumin</label>
+        <input type="text" name="name" required><br><br>
+        <label>sugar</label>
+        <input type="text" name="name" required><br><br>
+        <label>red blood cells</label>
+        <input type="text" name="name" required><br><br>
+        <label>pus cell</label>
+        <input type="text" name="name" required><br><br>
+        <label>pus cell clumps</label>
+        <input type="text" name="name" required><br><br>
+        <label>bacteria</label>
+        <input type="text" name="name" required><br><br>
+        <label>blood glucose random</label>
+        <input type="text" name="name" required><br><br>
+        <label>blood urea</label>
+        <input type="text" name="name" required><br><br>
+        <label>serum creatinine</label>
+        <input type="text" name="name" required><br><br>
+        <label>sodium</label>
+        <input type="text" name="name" required><br><br>
+        <label>potassium</label>
+        <input type="text" name="name" required><br><br>
+        <label>hemoglobin</label>
+        <input type="text" name="name" required><br><br>
+        <label>packed cell volume</label>
+        <input type="text" name="name" required><br><br>
+        <label>white blood cell count</label>
+        <input type="text" name="name" required><br><br>
+        <label>red blood cell count</label>
+        <input type="text" name="name" required><br><br>
+        <label>hypertension</label>
+        <input type="text" name="name" required><br><br>
+        <label>diabetes mellitus</label>
+        <input type="text" name="name" required><br><br>
+        <label>coronary artery disease</label>
+        <input type="text" name="name" required><br><br>
+        <label>appetite</label>
+        <input type="text" name="name" required><br><br>
+        <label>pedal edema</label>
+        <input type="text" name="name" required><br><br>
+        <label>coronary artery disease</label>
+        <input type="text" name="name" required><br><br>
+        <label>anemia</label>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+      
+    </section>
+  </main>
+</body>
+</html>
