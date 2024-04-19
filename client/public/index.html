@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="./logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    <link rel="stylesheet" href="./styles.css">
-
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
-    <title>Renal Guardian</title>
-  </head>
-  <body>
-    <header>
-      <!-- <img src="./logo.png" alt="logo" id="logo1"> -->
-      <h1>Renal Guardian</h1>
-    </header>
-    <main>
-     <span>
-      <p id="content1" style="font-family: 'Roboto', sans-serif;">
-        The kidneys are vital organs that filter waste products and excess fluids from the bloodstream, 
-        regulating electrolyte balance, blood pressure, and acid-base equilibrium. They produce hormones
-         essential for red blood cell production, bone health, and blood pressure regulation, playing a 
-         crucial role in maintaining overall health and homeostasis. Dysfunction of the kidneys can lead to
-          serious health complications, including chronic kidney disease, electrolyte imbalances, hypertension,
-          and impaired detoxification
-      </p>
-     </span>
-     <span>
-      <a href="./predict.html">check</a>
-     </span>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Renal Guardian</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <!-- Google Fonts - Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Custom CSS -->
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Renal Guardian</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <!-- Add more navigation links as needed -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <p>
+      The kidneys are vital organs that filter waste products and excess fluids from the bloodstream, 
+      regulating electrolyte balance, blood pressure, and acid-base equilibrium. They produce hormones
+      essential for red blood cell production, bone health, and blood pressure regulation, playing a 
+      crucial role in maintaining overall health and homeostasis. Dysfunction of the kidneys can lead to
+      serious health complications, including chronic kidney disease, electrolyte imbalances, hypertension,
+      and impaired detoxification.
+    </p>
+    <a href="./predict.html">Check now</a>
+  </main>
+</body>
 </html>
