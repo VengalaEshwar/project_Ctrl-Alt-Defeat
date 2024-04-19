@@ -4,13 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn import preprocessing
 from sklearn.impute import SimpleImputer
-def preprocess(data) :
-    # dt=pd.read_csv("D:\coding\Project_Ctrl-Alt-Defeat\mongodb\kidney_disease.csv")
-    dt= pd.DataFrame(data)
+def preprocess_CSV(csv) :
+    dt=pd.read_csv(csv)
     mode=SimpleImputer(missing_values=np.nan,strategy='most_frequent')
     dt_imputer=pd.DataFrame(mode.fit_transform(dt))
     dt_imputer.columns=dt.columns
-    #handle trash data
     dt_imputer['dm']=dt_imputer['dm'].apply(lambda x:'yes' if x=='\tyes' else x)
     dt_imputer['dm']=dt_imputer['dm'].apply(lambda x:'no' if x=='\tno' else x)
     dt_imputer['cad']=dt_imputer['cad'].apply(lambda x:'no' if x=='\tno' else x)
@@ -24,6 +22,8 @@ def preprocess(data) :
     mapping1={'yes':'yes','no':'no',' yes':'yes'}
     dt_imputer['dm']=dt_imputer['dm'].replace(mapping1)
     encode=dt_imputer.apply(preprocessing.LabelEncoder().fit_transform)
-    return encode
+    return encode.iloc[len(encode)-1]
+def preprocess(data) : 
+    
 # print(dict(encode.iloc[0]))
 # encode.to_csv("final_kidney_disease.csv")
