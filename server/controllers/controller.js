@@ -8,6 +8,7 @@ exports.error =(req,res)=> {
 exports.postData =  async (req, res) => {
     try {
         // Send request to Python Flask API
+        console.log(req.body);
         const response = await axios.post('http://localhost:5001/predict', req.body);
         const prediction = response.data;
         res.json(prediction);
