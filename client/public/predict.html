@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RenalGuardian</title>
+  <!-- Link Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Add your custom CSS file -->
+  <link rel="stylesheet" href="./styles.css">
+  <script>
+    // Your JavaScript code goes here
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Renal Guardian</h1>
+  </header>
+  <main>
+    <div class="container">
+      <section class="prediction-form">
+        <h2>Prediction Form</h2>
+        <form method="post">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required><br><br>
+      
+          <label for="blood_pressure">Blood Pressure (mmHg):</label>
+          <input type="number" id="blood_pressure" name="blood_pressure" required><br><br>
+      
+          <label for="specific_gravity">Specific Gravity:</label>
+          <input type="number" id="specific_gravity" name="specific_gravity" required><br><br>
+      
+          <label for="albumin">Albumin:</label>
+          <input type="number" id="albumin" name="albumin" required><br><br>
+      
+          <label for="sodium">Sodium (mEq/L):</label>
+          <input type="number" id="sodium" name="sodium" required><br><br>
+      
+          <label for="potassium">Potassium (mEq/L):</label>
+          <input type="number" id="potassium" name="potassium" required><br><br>
+      
+          <label for="hemoglobin">Hemoglobin (gms):</label>
+          <input type="number" id="hemoglobin" name="hemoglobin" required><br><br>
+      
+          <label for="packed_cell_volume">Packed Cell Volume:</label>
+          <input type="number" id="packed_cell_volume" name="packed_cell_volume" required><br><br>
+      
+          <label for="white_blood_cell_count">White Blood Cell Count (cells/cumm):</label>
+          <input type="number" id="white_blood_cell_count" name="white_blood_cell_count" required><br><br>
+      
+          <label for="red_blood_cell_count">Red Blood Cell Count (millions/cmm):</label>
+          <input type="number" id="red_blood_cell_count" name="red_blood_cell_count" required><br><br>
+      
+          <label for="hypertension">Hypertension:</label>
+          <select id="hypertension" name="hypertension" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select><br><br>
+      
+          <label for="diabetes_mellitus">Diabetes Mellitus:</label>
+          <select id="diabetes_mellitus" name="diabetes_mellitus" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select><br><br>
+      
+          <label for="coronary_artery_disease">Coronary Artery Disease:</label>
+          <select id="coronary_artery_disease" name="coronary_artery_disease" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select><br><br>
+      
+          <label for="appetite">Appetite:</label>
+          <select id="appetite" name="appetite" required>
+            <option value="good">Good</option>
+            <option value="poor">Poor</option>
+          </select><br><br>
+      
+          <label for="pedal_edema">Pedal Edema:</label>
+          <select id="pedal_edema" name="pedal_edema" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select><br><br>
+      
+          <label for="anemia">Anemia:</label>
+          <select id="anemia" name="anemia" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select><br><br>
+      
+          <label for="class">Class:</label>
+          <select id="class" name="class" required>
+            <option value="ckd">CKD</option>
+            <option value="notckd">Not CKD</option>
+          </select><br><br>
+      
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+    </div>
+  </main>
+  <script>
+    const form1 = document.querySelector(".form")
+    form1.addEventListener('submit',event=>{
+      event.preventDefault();
+      const formData = new FormData(form1);
+      const data = Object.fromEntries(formData);
+      fetch("http://localhost:5000/Project/postData",{
+        method : 'POST',headers : {
+          'Content-Type' : 'applications/json'
+        },
+        body :JSON.stringify(data)
+      }).then(res=>res.json())
+      .then(res=>res.json())
+     });
+  </script>
+  <!-- Link Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

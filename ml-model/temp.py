@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import numpy as np
 import pandas as pd
 na_list=['?','notpresent']
@@ -16,3 +17,8 @@ mapping={'present':1 , 'notpresent':0}
 df['ba']=df['ba'].replace(mapping)
 # df.drop(columns=['Unnamed: 0.1'], inplace=True)
 df.to_csv('data.csv',index=False)
+=======
+import DataPreProcessing as pre
+print(pre.preprocess(data1))
+print(data1)
+>>>>>>> 0856b3b1bedd334edbe30dbb52fcd0a8ae862adc
