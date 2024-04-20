@@ -1,3 +1,4 @@
 import DataPreProcessing as pre
-print(pre.preprocess(data1))
-print(data1)
+data={}
+print(pre.preprocess(data))
+print()
