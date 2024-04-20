@@ -23,7 +23,8 @@ def preprocess_CSV(csv) :
     dt_imputer['dm']=dt_imputer['dm'].replace(mapping1)
     encode=dt_imputer.apply(preprocessing.LabelEncoder().fit_transform)
     return encode.iloc[len(encode)-1]
-def preprocess(data) : 
-    
+# def preprocess(data) : 
+#     if(data[''])
+
 # print(dict(encode.iloc[0]))
 # encode.to_csv("final_kidney_disease.csv")
