@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import model
+# import model
 # import your_ml_module
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
-    prediction = model.predict(data)
+    prediction =data #model.predict(data)
     print("Handled the data" , data)
     print(data)
     return jsonify(prediction)

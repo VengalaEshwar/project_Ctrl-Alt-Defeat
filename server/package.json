@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "mongoose": "^8.3.2"
   }

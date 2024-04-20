@@ -16,15 +16,15 @@ exports.predict =  async (req, res) => {
 
         //inserting the predicated raw and processed data into the database
 
-        let raw_data = req.body;
-        let processed_data = new Object(prediction);
-        raw_data['classification'] = prediction==1?"notckd":"ckd";
-        processed_data['classification']=prediction;
-        model.insert_pre_processed_data(processed_data);
-        model.insert_raw_data(raw_data);
+        // let raw_data = req.body;
+        // let processed_data = new Object(prediction);
+        // raw_data['classification'] = prediction==1?"notckd":"ckd";
+        // processed_data['classification']=prediction;
+        // model.insert_pre_processed_data(processed_data);
+        // model.insert_raw_data(raw_data);
         
         //suggestion from the prediction
-        const result = suggest(req.body,prediction);
+        const result =  prediction//suggest(req.body,prediction);
 
         res.json(result);
     } catch (error) {

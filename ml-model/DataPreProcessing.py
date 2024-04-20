@@ -23,9 +23,23 @@ def preprocess_CSV(csv) :
     dt_imputer['dm']=dt_imputer['dm'].replace(mapping1)
     encode=dt_imputer.apply(preprocessing.LabelEncoder().fit_transform)
     return encode.iloc[len(encode)-1]
-def preprocess(data) : 
+def preprocess(data): 
+    # Convert the input data to a DataFrame
+    data = pd.DataFrame(data, index=[0])
+    
+    # Select columns with character data
+    character_data = data.select_dtypes(include=['object'])
+
+    # Apply LabelEncoder to each column with character data
     le = preprocessing.LabelEncoder()
-    numerical_data = data.apply(le.fit_transform)
-    return numerical_data
-# print(dict(encode.iloc[0]))
-# encode.to_csv("final_kidney_disease.csv")
+    character_data_encoded = character_data.apply(lambda col: le.fit_transform(col))
+
+    # Combine the encoded character data with the numerical data
+    numerical_data = data.select_dtypes(exclude=['object'])
+    encoded_data = pd.concat([numerical_data, character_data_encoded], axis=1)
+    
+    # Drop the 'id' column if present
+    if 'id' in encoded_data.columns:
+        encoded_data.drop('id', inplace=True, axis=1)
+        print(encoded_data.columns)
+    return encoded_data
