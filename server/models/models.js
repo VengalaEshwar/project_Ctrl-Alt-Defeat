@@ -1,12 +1,12 @@
 const mg = require('mongoose');
 const ctoj = require('csvtojson');
-const schem = require('Schemas.js');
+const schema = require('./Schemas.js')
 mg.connect("mongodb://localhost:27017/Project_RG");
 const db = mg.connection;
 
     //collections of our database
-  const pre_processed_data = mg.model("pre_processed_data",pre_processed_schema);
-  const raw_data = mg.model("raw_data",raw_data_schema);
+  const pre_processed_data = mg.model("pre_processed_data",schema.pre_processed_schema);
+  const raw_data = mg.model("raw_data",schema.raw_data_schema);
 
     //methods for inserting the data intp db
   exports.insert_raw_data = (data)=>
@@ -19,7 +19,7 @@ const db = mg.connection;
   }
   exports.insert_pre_processed_data = (data)=>
   {
-    pre_processed_data.insert(data).then((res)=>{
+    pre_processed_schema.insert(data).then((res)=>{
         console.log("inserted");
     }).catch((err)=>{
         console.log("error"+err);

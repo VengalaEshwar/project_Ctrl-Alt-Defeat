@@ -1,29 +1,28 @@
-exports.raw_data_schema = new mg.Schema({
-    id: { type: Number },
-  age: { type: Number },
-  bp: { type: Number },
-  sg: { type: Number },
-  al: { type: Number },
-  su: { type: Number },
-  rbc: { type: String },
-  pc: { type: String },
-  pcc: { type: String },
-  ba: { type: String },
-  bgr: { type: Number },
-  bu: { type: Number },
-  sc: { type: Number },
-  sod: { type: Number },
-  pot: { type: Number },
-  hemo: { type: Number },
-  pcv: { type: String },
-  wc: { type: String },
-  rc: { type: String },
-  htn: { type: String },
-  ane: { type: String },
-  classification: { type: String }
-  });
-exports.pre_processed_schema = new mg.Schema(
-    {
+exports.raw_data_schema = {
+  id: { type: Number },
+age: { type: Number },
+bp: { type: Number },
+sg: { type: Number },
+al: { type: Number },
+su: { type: Number },
+rbc: { type: String },
+pc: { type: String },
+pcc: { type: String },
+ba: { type: String },
+bgr: { type: Number },
+bu: { type: Number },
+sc: { type: Number },
+sod: { type: Number },
+pot: { type: Number },
+hemo: { type: Number },
+pcv: { type: String },
+wc: { type: String },
+rc: { type: String },
+htn: { type: String },
+ane: { type: String },
+classification: { type: String }
+};
+exports.pre_processed_schema = {
         id: { type: Number },
         age: { type: Number },
         bp: { type: Number },
@@ -46,11 +45,10 @@ exports.pre_processed_schema = new mg.Schema(
         htn: { type: Number },
         ane: { type: Number },
         classification: { type: Number }
-      }
-  );
-exports.userSchema = mg.Schema({
-    name : String,
-    age  : Number,
-    email : String
-});
+      };
+exports.userSchema = {
+  name : String,
+  age  : Number,
+  email : String
+}
   
