@@ -24,6 +24,8 @@ def preprocess_CSV(csv) :
     encode=dt_imputer.apply(preprocessing.LabelEncoder().fit_transform)
     return encode.iloc[len(encode)-1]
 def preprocess(data) : 
-    
+    le = preprocessing.LabelEncoder()
+    numerical_data = data.apply(le.fit_transform)
+    return numerical_data
 # print(dict(encode.iloc[0]))
 # encode.to_csv("final_kidney_disease.csv")
