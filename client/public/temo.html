@@ -12,6 +12,14 @@
             background-color: #37474f; /* Dark Blue */
             color: #ffffff; /* White text */
         }
+        .container1 {
+            background-color: #37474f; /* Dark Blue */
+            padding: 10px;
+            text-align: center;
+        }
+        .container1 .logo {
+            max-width: 70px; /* Adjust the maximum width of the image */
+        }
         .container {
             max-width: 600px;
             margin: 50px auto;
@@ -34,7 +42,7 @@
             color: #ffffff; /* White text */
         }
         input[type="number"],
-        select {
+        select ,input{
             width: 100%;
             padding: 10px;
             border-radius: 5px;
@@ -43,18 +51,20 @@
             background-color: #455a64; /* Dark Gray */
             color: #ffffff; /* White text */
         }
-        button[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #009688; /* Green */
-            color: #ffffff; /* White text */
-            border: none;
+        .button {
+            display: block;
+            width: fit-content;
+            margin: auto;
+            padding: 15px 30px;
             border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
+            font-size: 24px;
+            color: #ffffff; /* White text */
+            background-color: #757575; /* Grey */
             transition: background-color 0.3s;
         }
-        button[type="submit"]:hover {
-            background-color: #00796b; /* Dark Green */
+        .button:hover {
+            background-color: #616161; /* Dark Grey */
         }
         /* Add spacing between form elements */
         form > * {
@@ -63,6 +73,14 @@
     </style>
 </head>
 <body>
+    <div class="container1">
+        <nav>
+            <a href="index.html" style="text-decoration: none;">
+                <h1 style="color: aliceblue; font-size: 70px;"><img src="kidney.png" class="logo">RENAL GUARDIAN</h1>
+            </a>
+        </nav>
+    </div>
+    
     <div class="container">
         <h1>CKD Prediction</h1>
         <form action="/predict" method="post">
@@ -209,7 +227,8 @@
                 <option value="no">No</option>
             </select>
             
-            <button type="submit">Predict</button>
+            <button type="button" class="button" onclick="window.location.href = 'evaluation.html';">Predict</button>
+
         </form>
     </div>
 </body>

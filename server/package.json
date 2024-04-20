@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat/issues"
   },
-  "homepage": "https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat#readme"
+  "homepage": "https://github.com/VengalaEshwar/project_Ctrl-Alt-Defeat#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "mongoose": "^8.3.2"
+  }
 }

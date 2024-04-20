@@ -1,6 +1,6 @@
 const controller = require("../controllers/controller.js");
 module.exports = (app) => {
-    app.get("/project",controller.start);
-    app.post("/project/postData",controller.postData);
+    app.get("/RenalGuardian",controller.start);
+    app.post("/RenalGuardian/predict",controller.pedict);
     app.get("*",controller.error);
 }
